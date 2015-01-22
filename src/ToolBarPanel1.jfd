@@ -1,0 +1,115 @@
+JFDML JFormDesigner: "5.1.1.0.120" Java: "1.7.0_10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
+			"$rowSpecs": "25"
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			"border": new javax.swing.border.EmptyBorder( 0, 5, 0, 5 )
+			add( new FormComponent( "SlimButton" ) {
+				name: "refreshButton"
+				"toolTipText": "Обновить (F5)"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "refreshButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"insets": new java.awt.Insets( 5, 0, 5, 0 )
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "searchButton"
+				"toolTipText": "Поиск (Ctrl+F)"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 1
+				"insets": new java.awt.Insets( 5, 0, 5, 0 )
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "exportButton"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				"toolTipText": "Экспорт в Excel (Ctrl+E)"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "slimButton1ActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+				"insets": new java.awt.Insets( 5, 0, 5, 0 )
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "saveButton"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				"toolTipText": "Сохранить... (Ctrl+S)"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"insets": new java.awt.Insets( 5, 0, 5, 0 )
+			} )
+			add( new FormComponent( "SlimToggleButton" ) {
+				name: "machineButton"
+				"toolTipText": "Машина времени"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "machineButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 4
+				"insets": new java.awt.Insets( 5, 0, 5, 0 )
+			} )
+			add( new FormComponent( "SlimToggleButton" ) {
+				name: "groupButton"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				"toolTipText": "Автоматическая группировка"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "groupButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 5
+				"insets": new java.awt.Insets( 5, 0, 5, 0 )
+			} )
+			add( new FormComponent( "org.jdesktop.swingx.JXDatePicker" ) {
+				name: "datePicker"
+				"preferredSize": new java.awt.Dimension( 115, 25 )
+				auxiliary() {
+					"JavaCodeGenerator.postInitCode": "${field}.setFormats(\"EEE dd.MM.yyyy\",\"dd.MM.yyyy\",\"dd.MM\");"
+				}
+				addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "datePickerPropertyChange", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 6
+				"insets": new java.awt.Insets( 5, 15, 5, 10 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "timeLabel1"
+				"text": "24:00"
+				"font": new java.awt.Font( "Dialog", 1, 12 )
+				"preferredSize": new java.awt.Dimension( 35, 25 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 7
+				"insets": new java.awt.Insets( 5, 0, 5, 0 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "timeLabel2"
+				"text": "00:00"
+				"font": new java.awt.Font( "Dialog", 1, 12 )
+				"preferredSize": new java.awt.Dimension( 35, 25 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 8
+				"insets": new java.awt.Insets( 5, 0, 5, 0 )
+			} )
+			add( new FormComponent( "javax.swing.JSlider" ) {
+				name: "timeSlider"
+				"maximum": 288
+				"value": 0
+				"preferredSize": new java.awt.Dimension( 600, 33 )
+				"minorTickSpacing": 6
+				"majorTickSpacing": 12
+				"paintTicks": true
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "timeSliderMousePressed", true ) )
+				addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "timeSliderStateChanged", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 9
+				"insets": new java.awt.Insets( 0, 15, 0, 0 )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1000, 50 )
+		} )
+	}
+}

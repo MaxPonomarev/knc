@@ -1,0 +1,119 @@
+JFDML JFormDesigner: "5.1.1.0.120" Java: "1.7.0_10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0:1.0, 90, 100"
+			"$rowSpecs": "0, 0, 0"
+			"$alignTop": true
+			"$alignLeft": true
+		} ) {
+			name: "this"
+			"$sizePolicy": 0
+			"defaultCloseOperation": 2
+			"title": "Блокировка/разблокировка услуг"
+			"resizable": false
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "topLabel"
+				"text": "Заблокировать/разблокировать услугу на указанных киосках"
+				"font": new java.awt.Font( "Dialog", 1, 12 )
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridwidth": 3
+				"hAlign": 2
+				"insets": new java.awt.Insets( 10, 10, 10, 10 )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "200:1.0, 150"
+				"$rowSpecs": "0, 0"
+				"$alignLeft": true
+			} ) {
+				name: "panel1"
+				"border": new javax.swing.border.EtchedBorder( 1, null, null )
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Услуга"
+					"font": new java.awt.Font( "Dialog", 1, 12 )
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"insets": new java.awt.Insets( 15, 10, 0, 0 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Действие"
+					"font": new java.awt.Font( "Dialog", 1, 12 )
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+					"insets": new java.awt.Insets( 15, 10, 0, 10 )
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "productComboBox"
+					"font": new java.awt.Font( "Dialog", 1, 12 )
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					auxiliary() {
+						"JavaCodeGenerator.postInitCode": "${field}.setModel(new DefaultComboBoxModel<>(products));"
+						"JavaCodeGenerator.typeParameters": "ProductID<String, String>"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 1
+					"insets": new java.awt.Insets( 0, 10, 15, 0 )
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "availableComboBox"
+					"font": new java.awt.Font( "Dialog", 1, 12 )
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "ProductID<String, Boolean>"
+						"JavaCodeGenerator.postInitCode": "${field}.setModel(new DefaultComboBoxModel<>(values));"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+					"gridy": 1
+					"insets": new java.awt.Insets( 0, 10, 15, 10 )
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 1
+				"gridwidth": 3
+				"insets": new java.awt.Insets( 0, 10, 0, 10 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "okButton"
+				"text": "OK"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "okButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 2
+				"gridx": 1
+				"insets": new java.awt.Insets( 15, 0, 15, 10 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "cancelButton"
+				"text": "Отмена"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+				"gridy": 2
+				"insets": new java.awt.Insets( 15, 0, 15, 20 )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 475, 200 )
+		} )
+	}
+}

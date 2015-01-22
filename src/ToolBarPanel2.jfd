@@ -1,0 +1,99 @@
+JFDML JFormDesigner: "5.1.1.0.120" Java: "1.7.0_10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0, 0, 0, 0, 0, 0, 0:1.0, 0, 0"
+			"$rowSpecs": "25"
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			"border": new javax.swing.border.EmptyBorder( 5, 5, 5, 5 )
+			add( new FormComponent( "SlimButton" ) {
+				name: "searchButton"
+				"toolTipText": "Поиск (Ctrl+F)"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+			add( new FormComponent( "SlimButton" ) {
+				name: "exportButton"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				"toolTipText": "Экспорт в Excel (Ctrl+E)"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exportButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 1
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "saveButton"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				"toolTipText": "Сохранить... (Ctrl+S)"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "saveAllButton"
+				"toolTipText": "Сохранить все реестры... (Ctrl+Shift+A)"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveAllButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "summaryButton"
+				"text": "Сводка"
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 0
+				}
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "summaryButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 4
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "filterComboBox"
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "фильтр:"
+					addElement( "фильтр:" )
+					addElement( "включить" )
+					addElement( "исключить" )
+					addElement( "выделить" )
+				}
+				auxiliary() {
+					"JavaCodeGenerator.typeParameters": "String"
+				}
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "keyPressed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 5
+				"insets": new java.awt.Insets( 0, 10, 0, 0 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "filterTextField"
+				"font": new java.awt.Font( "Dialog", 0, 12 )
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "keyPressed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 6
+				"insets": new java.awt.Insets( 0, 10, 0, 10 )
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "applyFilterButton"
+				"text": "Применить"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "applyFilterButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 7
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "clearFilterButton"
+				"text": "Очистить"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "clearFilterButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 8
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 760, 50 )
+		} )
+	}
+}

@@ -1,0 +1,105 @@
+JFDML JFormDesigner: "5.1.1.0.120" Java: "1.7.0_10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0, 0, 0, 0, 0, 0, 0, 0, 0"
+			"$rowSpecs": "25"
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			"border": new javax.swing.border.EmptyBorder( 5, 5, 5, 5 )
+			add( new FormComponent( "SlimButton" ) {
+				name: "searchButton"
+				"toolTipText": "Поиск (Ctrl+F)"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+			add( new FormComponent( "SlimButton" ) {
+				name: "exportButton"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				"toolTipText": "Экспорт в Excel (Ctrl+E)"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exportButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 1
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "saveButton"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				"toolTipText": "Сохранить... (Ctrl+S)"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+			} )
+			add( new FormComponent( "SlimToggleButton" ) {
+				name: "groupButton"
+				"toolTipText": "Автоматическая группировка"
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "groupButtonActionPerformed", false ) )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "groupButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "startLabel"
+				"text": "с"
+				"font": new java.awt.Font( "Dialog", 1, 12 )
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 4
+				"insets": new java.awt.Insets( 0, 20, 0, 5 )
+			} )
+			add( new FormComponent( "org.jdesktop.swingx.JXDatePicker" ) {
+				name: "startDatePicker"
+				"preferredSize": new java.awt.Dimension( 115, 25 )
+				auxiliary() {
+					"JavaCodeGenerator.postInitCode": "${field}.setFormats(\"EEE dd.MM.yyyy\",\"dd.MM.yyyy\",\"dd.MM\");\n${field}.getComponent(0).setFocusable(false);\n${field}.setDate(date);"
+					"JavaCodeGenerator.variableModifiers": 0
+				}
+				addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "startDatePickerPropertyChange", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 5
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "endLabel"
+				"text": "по"
+				"font": new java.awt.Font( "Dialog", 1, 12 )
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 6
+				"insets": new java.awt.Insets( 0, 10, 0, 5 )
+			} )
+			add( new FormComponent( "org.jdesktop.swingx.JXDatePicker" ) {
+				name: "endDatePicker"
+				"preferredSize": new java.awt.Dimension( 115, 25 )
+				auxiliary() {
+					"JavaCodeGenerator.postInitCode": "${field}.setFormats(\"EEE dd.MM.yyyy\",\"dd.MM.yyyy\",\"dd.MM\");\n${field}.getComponent(0).setFocusable(false);\n${field}.setDate(date);"
+					"JavaCodeGenerator.variableModifiers": 0
+				}
+				addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "endDatePickerPropertyChange", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 7
+			} )
+			add( new FormComponent( "SlimButton" ) {
+				name: "getButton"
+				"text": "Получить"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "getButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 8
+				"insets": new java.awt.Insets( 0, 25, 0, 0 )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 760, 50 )
+		} )
+	}
+}

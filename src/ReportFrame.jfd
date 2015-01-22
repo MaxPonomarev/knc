@@ -1,0 +1,194 @@
+JFDML JFormDesigner: "5.1.1.0.120" Java: "1.7.0_10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"$locationPolicy": 2
+			"$sizePolicy": 2
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "0, 0, 0, 150, center:0"
+				"$rowSpecs": "0, 0"
+				"$alignLeft": true
+				"$alignTop": true
+				"$hGap": 10
+				"$vGap": 10
+			} ) {
+				name: "reportPanel"
+				"border": new javax.swing.border.EmptyBorder( 10, 10, 10, 10 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0, 0:1.0"
+					"$rowSpecs": "0:1.0"
+					"$alignLeft": true
+				} ) {
+					name: "panel1"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "typeLabel"
+						"text": "Тип отчета:"
+						"font": new java.awt.Font( "Dialog", 1, 12 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": new java.awt.Insets( 0, 0, 0, 5 )
+					} )
+					add( new FormComponent( "javax.swing.JComboBox" ) {
+						name: "typeComboBox"
+						"font": new java.awt.Font( "Dialog", 1, 12 )
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						auxiliary() {
+							"JavaCodeGenerator.postInitCode": "${field}.setModel(new DefaultComboBoxModel<>(REPORT_TYPES));"
+							"JavaCodeGenerator.typeParameters": "ProductID<String, Integer>"
+						}
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "kioskComboBox"
+					"maximumRowCount": 16
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"font": &Font0 new java.awt.Font( "Dialog", 1, 12 )
+					"preferredSize": new java.awt.Dimension( 240, 25 )
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "ProductID<String, String>"
+						"JavaCodeGenerator.postInitCode": "${field}.addItem(new ProductID<>(\"Получение...\", \"e\"));"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "gatewayComboBox"
+					"font": &Font1 new java.awt.Font( "Dialog", 1, 12 )
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "ProductID<String, String>"
+						"JavaCodeGenerator.postInitCode": "${field}.addItem(new ProductID<>(\"Получение...\", \"e\"));"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 2
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "filterTextField"
+					"font": new java.awt.Font( "Dialog", 0, 12 )
+					auxiliary() {
+						"JavaCodeGenerator.postInitCode": "${field}.setText(KNC_Terminal.queryFilter);"
+					}
+					addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "filterTextFieldFocusGained", false ) )
+					addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "filterTextFieldFocusLost", false ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 3
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "exportButton"
+					"enabled": false
+					"preferredSize": new java.awt.Dimension( 25, 25 )
+					auxiliary() {
+						"JavaCodeGenerator.postInitCode": "${field}.setIcon(exportButtonIcon);"
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exportButtonActionPerformed", false ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 4
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0, 115, 0:1.0, 115"
+					"$rowSpecs": "0:1.0"
+					"$alignLeft": true
+				} ) {
+					name: "panel2"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "startLabel"
+						"text": "с"
+						"font": &Font2 new java.awt.Font( "Dialog", 1, 12 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"insets": new java.awt.Insets( 0, 0, 0, 5 )
+						"hAlign": 4
+					} )
+					add( new FormComponent( "org.jdesktop.swingx.JXDatePicker" ) {
+						name: "startDatePicker"
+						auxiliary() {
+							"JavaCodeGenerator.postInitCode": "${field}.setFormats(\"EEE dd.MM.yyyy\",\"dd.MM.yyyy\",\"dd.MM\");"
+						}
+						addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "startDatePickerPropertyChange", false ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "endLabel"
+						"text": "по"
+						"font": #Font2
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"insets": new java.awt.Insets( 0, 10, 0, 5 )
+						"hAlign": 4
+					} )
+					add( new FormComponent( "org.jdesktop.swingx.JXDatePicker" ) {
+						name: "endDatePicker"
+						auxiliary() {
+							"JavaCodeGenerator.postInitCode": "${field}.setFormats(\"EEE dd.MM.yyyy\",\"dd.MM.yyyy\",\"dd.MM\");"
+						}
+						addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "endDatePickerPropertyChange", false ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 3
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 1
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "productComboBox"
+					"maximumRowCount": 16
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"font": #Font0
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "ProductID<String, ?>"
+						"JavaCodeGenerator.postInitCode": "${field}.addItem(new ProductID<>(\"Получение...\", \"e\"));"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+					"gridy": 1
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "statusComboBox"
+					"font": #Font1
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					auxiliary() {
+						"JavaCodeGenerator.postInitCode": "${field}.setModel(new DefaultComboBoxModel<>(statuses));"
+						"JavaCodeGenerator.typeParameters": "ProductID<String, String>"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 2
+					"gridy": 1
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "requestButton"
+					"text": "Отправить запрос"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "requestButtonActionPerformed", false ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 3
+					"gridy": 1
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "saveButton"
+					"enabled": false
+					"preferredSize": new java.awt.Dimension( 25, 25 )
+					auxiliary() {
+						"JavaCodeGenerator.postInitCode": "${field}.setIcon(saveButtonIcon);"
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveButtonActionPerformed", false ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 4
+					"gridy": 1
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "North"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 750, 300 )
+		} )
+	}
+}

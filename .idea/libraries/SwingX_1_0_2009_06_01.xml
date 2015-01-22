@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SwingX 1.0-2009.06.01">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/swingx.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/swingx.zip!/" />
+    </SOURCES>
+  </library>
+</component>

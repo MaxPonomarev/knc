@@ -1,0 +1,115 @@
+JFDML JFormDesigner: "5.1.1.0.120" Java: "1.7.0_10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0:1.0, 90, 100"
+			"$rowSpecs": "0, 0, 0"
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			"title": "Лог-файл киоска"
+			"defaultCloseOperation": 2
+			"resizable": false
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "topLabel"
+				"text": "Получить лог-файл указанных киосков"
+				"font": new java.awt.Font( "Dialog", 1, 12 )
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"hAlign": 2
+				"insets": new java.awt.Insets( 10, 10, 10, 10 )
+				"gridwidth": 3
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "0:1.0, 135, 0:1.0, 135"
+				"$rowSpecs": "61"
+				"$alignLeft": true
+			} ) {
+				name: "panel1"
+				"border": new javax.swing.border.EtchedBorder( 1, null, null )
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "с"
+					"font": new java.awt.Font( "Dialog", 1, 12 )
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"insets": new java.awt.Insets( 18, 10, 18, 5 )
+					"hAlign": 4
+				} )
+				add( new FormComponent( "org.jdesktop.swingx.JXDatePicker" ) {
+					name: "startDatePicker"
+					auxiliary() {
+						"JavaCodeGenerator.customCreateCode": "new JXDatePicker(new Date());"
+						"JavaCodeGenerator.postInitCode": "${field}.setFormats(\"EEE dd.MM.yyyy\",\"dd.MM.yyyy\",\"dd.MM\");"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+					"insets": new java.awt.Insets( 18, 0, 18, 10 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "по"
+					"font": new java.awt.Font( "Dialog", 1, 12 )
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 2
+					"insets": new java.awt.Insets( 18, 10, 18, 5 )
+					"hAlign": 4
+				} )
+				add( new FormComponent( "org.jdesktop.swingx.JXDatePicker" ) {
+					name: "endDatePicker"
+					auxiliary() {
+						"JavaCodeGenerator.customCreateCode": "new JXDatePicker(new Date());"
+						"JavaCodeGenerator.postInitCode": "${field}.setFormats(\"EEE dd.MM.yyyy\",\"dd.MM.yyyy\",\"dd.MM\");"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 3
+					"insets": new java.awt.Insets( 18, 0, 18, 10 )
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 1
+				"insets": new java.awt.Insets( 0, 10, 0, 10 )
+				"gridwidth": 3
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "okButton"
+				"text": "OK"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "okButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 2
+				"insets": new java.awt.Insets( 15, 0, 15, 10 )
+				"gridx": 1
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "cancelButton"
+				"text": "Отмена"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelButtonActionPerformed", false ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 2
+				"insets": new java.awt.Insets( 15, 0, 15, 20 )
+				"gridx": 2
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 405, 195 )
+			"location": new java.awt.Point( 0, 0 )
+		} )
+	}
+}

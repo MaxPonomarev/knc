@@ -1,0 +1,91 @@
+JFDML JFormDesigner: "5.1.1.0.120" Java: "1.7.0_10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"resizable": false
+			"title": "Авторизация"
+			"$locationPolicy": 2
+			"$sizePolicy": 1
+			auxiliary() {
+				"JavaCodeGenerator.preInitCode": "setLocation((int)(Toolkit.getDefaultToolkit().getScreenSize().width*0.283), (int)(Toolkit.getDefaultToolkit().getScreenSize().height*0.273));"
+			}
+			addEvent( new FormEvent( "java.awt.event.ComponentListener", "componentShown", "thisComponentShown", true ) )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panel"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "nameField"
+					"font": new java.awt.Font( "Dialog", 0, 12 )
+					auxiliary() {
+						"JavaCodeGenerator.postInitCode": "nameField.setActionCommand(\"name\");"
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "okButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 92
+					"y": 53
+					"width": 130
+					"height": 25
+				} )
+				add( new FormComponent( "javax.swing.JPasswordField" ) {
+					name: "passField"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "okButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 92
+					"y": 90
+					"width": 130
+					"height": 25
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "okButton"
+					"borderPainted": false
+					"contentAreaFilled": false
+					"icon": new com.jformdesigner.model.SwingIcon( 1, "images/but1.png" )
+					"pressedIcon": new com.jformdesigner.model.SwingIcon( 1, "images/but1pressed.png" )
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "okButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 15
+					"y": 127
+					"width": 98
+					"height": 44
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "cancelButton"
+					"borderPainted": false
+					"contentAreaFilled": false
+					"icon": new com.jformdesigner.model.SwingIcon( 1, "images/but2.png" )
+					"pressedIcon": new com.jformdesigner.model.SwingIcon( 1, "images/but2pressed.png" )
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelButtonActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 125
+					"y": 128
+					"width": 98
+					"height": 44
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "background"
+					"icon": new com.jformdesigner.model.SwingIcon( 1, "images/auth.png" )
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 240
+					"height": 215
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 240, 215 )
+		} )
+	}
+}

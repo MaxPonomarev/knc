@@ -1,0 +1,8 @@
+DefaultSortColumn=0
+DefaultTableMaximized=0
+Delay=150000
+TeekerDelay=240000
+K2NC_ip=127.0.0.1
+K2NC_port=490
+KNC_ip=95.31.50.247
+KNC_port=491
